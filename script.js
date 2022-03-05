@@ -1,18 +1,52 @@
-/*var x = 7;
-console.log(x);*/
+/*let dog = {
+    sound: "Au Au",
+    speak: function(){
+        console.log(this.sound);
+    }
+}
 
-/*function imprimir(){
-    x = 7;
-    console.log(x);
-};*/
-"use strict";
+let cat = {
+    sound: "Miau",
+    speak: function(){
+        console.log(this.sound);
+    }
+}
 
-function imprimir(){
-    //var x = 7;
-    x = 7;
-    console.log(x);
-};
+dog.speak();
+cat.speak();*/
 
-imprimir();
-console.log(x)
-console.log(window)
+/*function genericSpeak(){
+    console.log(this.sound);
+}
+
+let dog = {
+    sound: "Au Au",
+    speak: genericSpeak
+}
+
+let cat = {
+    sound: "Miau",
+    speak: genericSpeak
+}
+
+dog.speak();
+cat.speak();*/
+
+function genericSpeak(){
+    console.log(this.sound);
+}
+
+let dog = {
+    sound: "Au Au",
+    speak: genericSpeak
+}
+
+let cat = {
+    sound: "Miau",
+    speak: genericSpeak
+}
+
+//let bindedFunction = genericSpeak.bind(cat);
+//bindedFunction();
+genericSpeak.bind(cat)();
+genericSpeak.bind(dog)()
