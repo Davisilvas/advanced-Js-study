@@ -1,52 +1,33 @@
-/*let dog = {
-    sound: "Au Au",
-    speak: function(){
-        console.log(this.sound);
-    }
+/*function dobro(x){
+ console.log(2*x)
+}
+FUNÇÃO NORMAL
+dobro(598);
+
+let dobro = function(x){
+    console.log(2*x)
+}
+FUNÇÃO ANONIMA
+dobro(8);*/
+
+/*let dobro = (x) => {
+    console.log(2*x)
+};
+
+dobro(987);
+
+let dobro = x => (2*x);
+
+console.log(dobro(67))*/
+
+
+let dobro = function(){
+    return 2 * this.x;
 }
 
-let cat = {
-    sound: "Miau",
-    speak: function(){
-        console.log(this.sound);
-    }
+let numero = {
+    x: 8,
+    d: dobro
 }
 
-dog.speak();
-cat.speak();*/
-
-/*function genericSpeak(){
-    console.log(this.sound);
-}
-
-let dog = {
-    sound: "Au Au",
-    speak: genericSpeak
-}
-
-let cat = {
-    sound: "Miau",
-    speak: genericSpeak
-}
-
-dog.speak();
-cat.speak();*/
-
-function genericSpeak(){
-    console.log(this.sound);
-}
-
-let dog = {
-    sound: "Au Au",
-    speak: genericSpeak
-}
-
-let cat = {
-    sound: "Miau",
-    speak: genericSpeak
-}
-
-//let bindedFunction = genericSpeak.bind(cat);
-//bindedFunction();
-genericSpeak.bind(cat)();
-genericSpeak.bind(dog)()
+console.log(numero.d())
