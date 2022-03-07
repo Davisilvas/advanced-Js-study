@@ -1,30 +1,29 @@
-/*function ola(){
-    console.log("olá");
+let usuarios = ["Davi", "Maria", "Doly"];
+
+function addUser(nome){
+    let promise = new Promise(function(resolve, reject){
+        setTimeout (()=>{
+            usuarios.push(nome);
+            let error = false;
+            //let error = true;
+            
+            if(!error){
+                resolve();
+            }else{
+                reject({msg : "Erro qualquer"})
+            }
+
+        },1000)   
+    })
+    return promise; 
 }
 
-function tchau(){
-    console.log("tchau");
+function listUsers(){
+    console.log(usuarios);
 }
 
-function saudacao(s, nome){
-    s();
-    console.log(nome);
-}
-
-saudacao(ola, "Davi");
-*/
-
-let usuarios = ["Davi", "Maria", "Doly", "Tânia"];
-
-function inserirUser(nome, callback){
-    setTimeout(() => {
-        usuarios.push(nome);
-        callback();
-    }, 1000);
-}
-
-function listarUsers(){
-    console.log(usuarios)
-}
-
-inserirUser("Fernando", listarUsers);
+addUser("Tânia")
+        .then(listUsers)
+        .catch((error) => {
+            console.log(error.msg)
+        });
