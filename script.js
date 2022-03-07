@@ -1,33 +1,30 @@
-/*function dobro(x){
- console.log(2*x)
-}
-FUNÇÃO NORMAL
-dobro(598);
-
-let dobro = function(x){
-    console.log(2*x)
-}
-FUNÇÃO ANONIMA
-dobro(8);*/
-
-/*let dobro = (x) => {
-    console.log(2*x)
-};
-
-dobro(987);
-
-let dobro = x => (2*x);
-
-console.log(dobro(67))*/
-
-
-let dobro = function(){
-    return 2 * this.x;
+/*function ola(){
+    console.log("olá");
 }
 
-let numero = {
-    x: 8,
-    d: dobro
+function tchau(){
+    console.log("tchau");
 }
 
-console.log(numero.d())
+function saudacao(s, nome){
+    s();
+    console.log(nome);
+}
+
+saudacao(ola, "Davi");
+*/
+
+let usuarios = ["Davi", "Maria", "Doly", "Tânia"];
+
+function inserirUser(nome, callback){
+    setTimeout(() => {
+        usuarios.push(nome);
+        callback();
+    }, 1000);
+}
+
+function listarUsers(){
+    console.log(usuarios)
+}
+
+inserirUser("Fernando", listarUsers);
