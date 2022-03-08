@@ -5,7 +5,7 @@ function addUser(nome){
         setTimeout (()=>{
             usuarios.push(nome);
             let error = false;
-            //let error = true;
+            // let error = true;
             
             if(!error){
                 resolve();
@@ -22,8 +22,15 @@ function listUsers(){
     console.log(usuarios);
 }
 
-addUser("Tânia")
-        .then(listUsers)
-        .catch((error) => {
-            console.log(error.msg)
-        });
+async function executar(){
+    await addUser ("Bernardo");
+    listUsers()
+}
+
+executar();
+
+// addUser("Tânia")
+//         .then(listUsers)
+//         .catch((error) => {
+//             console.log(error.msg)
+//         });
