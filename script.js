@@ -1,32 +1,25 @@
-function newStudent (name, age){
-    return {name, age};
+var pessoa = {
+    name: "Davi Santos" ,
+    idade: 21
+};
 
-}
+var contato = {
+    tel: 993287911,
+    email:"morg.daviss@gmail.com"
+};
 
-let students = [
-    newStudent("Davi", 21),
-    newStudent("Maria", 23),
-    newStudent("Doly", 12),
-    newStudent("Thor", 5),
-];
+// var copia = {...pessoa, 
+//     cidade: "Engenheiro Paulo de Frontin",
+//     telefone: contato.tel}
 
-function nameAndAge(student){
-    return student.name + " is " + student.age + " years old";
-}
+var copia = {...pessoa, 
+    cidade: "Engenheiro Paulo de Frontin",
+    ...contato};
 
-// function studentInFiveYears(student){
-//     return{
-//         nome: student.name,
-//         idade: student.age + 5
-//     }
-// }
+    copia.idade = 33;
 
-// function studentInFiveYears(student){
-//     student.age += 5;
-//     return student;
-// }
+var notasT1 = [1, 2, 3, 4];
+var notasT2 = [5, 6, 7, 8];
 
-console.log(students.map(nameAndAge));
-
-
-console.log(students);
+var todasNotas = [...notasT1, ...notasT2];
+console.log(todasNotas);
