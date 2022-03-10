@@ -1,36 +1,42 @@
-let usuarios = ["Davi", "Maria", "Doly"];
+function newStudent (name, age){
+    return {name, age};
 
-function addUser(nome){
-    let promise = new Promise(function(resolve, reject){
-        setTimeout (()=>{
-            usuarios.push(nome);
-            let error = false;
-            // let error = true;
-            
-            if(!error){
-                resolve();
-            }else{
-                reject({msg : "Erro qualquer"})
-            }
-
-        },1000)   
-    })
-    return promise; 
 }
 
-function listUsers(){
-    console.log(usuarios);
+let students = [
+    newStudent("Davi", 21),
+    newStudent("Maria", 23),
+    newStudent("Doly", 12),
+    newStudent("Thor", 5),
+];
+console.log(students)
+
+// for (let student of students){
+//     if (student.age >= 15){
+//         console.log(student.name)
+//     }
+// }
+
+function over15(students){
+    return students.age >= 15;
 }
 
-async function executar(){
-    await addUser ("Bernardo");
-    listUsers()
+let studentsOver15 = students.filter(over15);
+console.log(studentsOver15);
+// console.log(students.filter(over15));
+
+function filtro(callback){
+
+    let alunosFiltrados = [];
+    for (let aluno of this){
+        if (callback(aluno)){
+            alunosFiltrados.push(aluno)
+        }
+    }
+
+    return alunosFiltrados;
 }
 
-executar();
+students.filtro = filtro;
 
-// addUser("Tânia")
-//         .then(listUsers)
-//         .catch((error) => {
-//             console.log(error.msg)
-//         });
+console.log(students.filtro(over15))
