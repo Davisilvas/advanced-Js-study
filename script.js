@@ -14,6 +14,18 @@ function nameAndAge(student){
     return student.name + " is " + student.age + " years old";
 }
 
+// function studentInFiveYears(student){
+//     return{
+//         nome: student.name,
+//         idade: student.age + 5
+//     }
+// }
+
+// function studentInFiveYears(student){
+//     student.age += 5;
+//     return student;
+// }
+
 console.log(students.map(nameAndAge));
 
 
