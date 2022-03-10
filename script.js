@@ -1,48 +1,16 @@
-// var {matricula, nome} = aluno; 
-// console.log(matricula);
-// console.log(nome);
+function novoAluno(nome, idade){
+    return {nome, idade}
+}
 
-// var {...copia} = aluno;
-// copia.matricula = 999999;
-// console.log(copia);
-// console.log(aluno);
+let alunos = [
+    novoAluno("Davi", 21),
+    novoAluno("Maria", 23),
+    novoAluno("Doly", 12),
+    novoAluno("Thor", 5)
+]
 
-// var {nome,...copia} = aluno;
-// copia.matricula = 999999;
-// console.log(copia);
-// console.log(aluno);
-// console.log(nome);
+function somaIdade(total, aluno){
+    return total + aluno.idade; 
+}
 
-// const {nome, matricula, ...copia} = aluno;
-// console.log(copia);
-// console.log(nome);
-// console.log(matricula);
-// console.log(aluno);
-
-var aluno0 = {
-    matricula: 2021999,
-    nome: "Davi" , 
-    telefone: 993287911,
-    cidade: "Engenheiro Paulo de Frontin"
-};
-
-var aluno1 = {
-    matricula: 04011999,
-    nome: "Maria", 
-    telefone: 8888888,
-    cidade: "Mendes"
-};
-
-var aluno2 = {
-    matricula: 111111111,
-    nome: "Doly", 
-    telefone: 666666666,
-    cidade: "Frontin"
-};
-
-var alunos = [aluno0, aluno1, aluno2];
-
-var [Davi, ...outros] = alunos;
-
-console.log(Davi);
-console.log(outros);
+console.log(alunos.reduce(somaIdade, 0))
