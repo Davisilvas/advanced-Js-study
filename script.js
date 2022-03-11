@@ -1,28 +1,19 @@
-// fetch(url)
-//     .then((res)=>{
+let nome = "";
 
-//         return  res.json()
-//     })
-//     .then((data)=>{
-//         console.log(data)
-//         // console.log(data.USDBRL.name)
-//     })
+try {
 
-let url ="https://economia.awesomeapi.com.br/last/USD-BRL";
+    if(nome==""){
+        throw "O nome não pode ser vazio"
+    }
 
-function converter(){
-    let input = document.getElementById("valor");
-    let valor = input.value;
+    console.log(nome);
 
-    fetch(url)
-    .then((res)=>{
+}catch(err){
 
-        return  res.json()
-    })
-    .then((data)=>{
-        let rate = data.USDBRL.low;
-        let resultado = valor + " dólares " + " equivalem a " + rate * valor + " reais."
-        document.getElementById("resultado").innerHTML = resultado
-        
-    })
+    console.log("houve um erro",err);
+
+}finally{
+
+    console.log("boa noite");
 }
+
